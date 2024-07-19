@@ -60,9 +60,13 @@ function changemodel()
 { var modeltext = document.getElementById("model-text");
  if(modelName==="XYZ")
      {modelName="CPRG";
-      modeltext.innerHTML="Model CPRG";}
- else{modelName="XYZ";
-      modeltext.innerHTML="Model XYZ";}
+      modeltext.innerHTML="Model CPRG";
+    }
+
+ else{
+      modelName="XYZ";
+      modeltext.innerHTML="Model XYZ";
+    }
   recalculate();
 }
 switch_model.addEventListener("click", changemodel);
@@ -85,22 +89,14 @@ switch_model.addEventListener("click", changemodel);
 // INSERT YOUR CODE HERE
 var durationchange = document.getElementById("duration-button");
 function changeDuration()
-{      var durationText = document.getElementById("duration-text");
-      
-   var newduration = prompt("Enter new duration:");
-
-
-    if (newduration !== null ) {
-        duration = parseInt(newDuration); 
-        durationText.innerHTML = duration;
-
-        
-        recalculate();
-    } else {
-        alert("Please enter a valid duration.");
-    }
+{   var durationText = document.getElementById("duration-text");
+    var newduration = prompt("Enter new duration:");
+    Duration=newduration;
+    durationText.innerHTML = Duration;
+    recalculate();
+    
 }
 
-durationButton.addEventListener("click", changeDuration);
+durationchange.addEventListener("click", changeDuration);
 
 
